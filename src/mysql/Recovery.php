@@ -88,6 +88,7 @@ class Recovery implements IRecovery
             return [
                 'nowfileidex' => $this->_nowfileidx, //当前正在恢复的文件
                 'nextfileidx' => $this->_nextfileidx,
+                'filename' => isset($filesarr[$this->_nowfileidx]) ? explode("#", $filesarr[$this->_nowfileidx])[0].".sql" : '',
                 'totalpercentage' => (int) $totalpercentage, //总百分比
             ];
         } catch (Exception $ex) {
